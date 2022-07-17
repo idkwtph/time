@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Clock</title>
+    <link
+      href="https://allfont.net/allfont.css?fonts=agency-fb"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="day-container">
+      <div class="sunday not-today">Sunday</div>
+      <div class="monday not-today">Monday</div>
+      <div class="tuesday not-today">Tuesday</div>
+      <div class="wenesday not-today">Wenesday</div>
+      <div class="thursday not-today">Thursday</div>
+      <div class="friday not-today">Friday</div>
+      <div class="saturday today">Saturday</div>
+    </div>
+    <div class="time-container">
+      <div class="time">
+        <span data-hours class="time-hours">LOA</span>
+        <span class="colon"></span>
+        <span data-minutes class="time-minutes">DI</span>
+        <span class="colon"></span>
+        <span data-seconds class="time-seconds">NG</span>
+        <span class="meridiem">
+          <span class="am invisible">AM</span>
+          <span class="pm invisible">PM</span>
+        </span>
+      </div>
+    </div>
+    <div class="time-types">
+      <button
+        class="twelve-hour active"
+        id="twelve-hour"
+        onclick="switchTimeType()"
+      >
+        12 Hour
+      </button>
+      <button
+        class="twenty-four-hour unactive"
+        id="twenty-four-hour"
+        onclick="switchTimeType()"
+      >
+        24 Hour
+      </button>
+    </div>
+  </body>
+</html>

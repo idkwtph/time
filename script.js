@@ -83,9 +83,9 @@ function update() {
     dayLabel.classList.remove("not-today");
     dayLabel.classList.remove("today");
     if (day == dayLabel.textContent) {
-      dayLabel.classList.add("active");
+      dayLabel.classList.add("today");
     } else {
-      dayLabel.classList.add("unactive");
+      dayLabel.classList.add("not-today");
     }
   });
   hoursLabel.textContent = hour;

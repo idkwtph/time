@@ -64,7 +64,7 @@ function setup() {
     weekday: "long",
   };
   const hoursNumber = date.getHours();
-  const minutesNumber = date.getHours();
+  const minutesNumber = date.getMinutes();
   const secondsNumber = date.getSeconds();
   year = date.getFullYear();
   month = numberToMonth[date.getMonth()];

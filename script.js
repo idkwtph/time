@@ -10,6 +10,7 @@ const pm = document.querySelector(".pm");
 const dateNumber = document.querySelector(".date-number");
 const dateMonth = document.querySelector(".date-month");
 const dateYear = document.querySelector(".date-year");
+const title = document.querySelector("title");
 
 const zeroToAdd = 0;
 const numberToMonth = [
@@ -94,6 +95,7 @@ function update() {
   hoursLabel.textContent = hour;
   minutesLabel.textContent = minute;
   secondsLabel.textContent = second;
+  title.textContent = hour + ":" + minute + ":" + second;
 }
 
 function checkTimeType() {
@@ -136,4 +138,4 @@ function makeVisible() {
 }
 
 makeVisible();
-setInterval(loop, 250);
+setInterval("loop()", 250);

@@ -7,6 +7,7 @@ const secondsLabel = document.querySelector(".time-seconds");
 const colons = document.querySelectorAll(".colon");
 const am = document.querySelector(".am");
 const pm = document.querySelector(".pm");
+const dateDay = document.querySelector(".date-day");
 const dateNumber = document.querySelector(".date-number");
 const dateMonth = document.querySelector(".date-month");
 const dateYear = document.querySelector(".date-year");
@@ -27,6 +28,8 @@ const numberToMonth = [
   "Nov",
   "Dec",
 ];
+
+const longToShortDay = [];
 
 let year = 0;
 let dayNumber = 0;
@@ -84,18 +87,23 @@ function update() {
     dayLabel.classList.remove("not-today");
     dayLabel.classList.remove("today");
     if (day == dayLabel.textContent) {
+      dayLabel.classList.remove("not-today");
       dayLabel.classList.add("today");
     } else {
+      dayLabel.classList.remove("today");
       dayLabel.classList.add("not-today");
     }
   });
+  dateDay.textContent = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+  }).format(new Date());
   dateYear.textContent = year;
   dateMonth.textContent = month;
   dateNumber.textContent = dayNumber;
   hoursLabel.textContent = hour;
   minutesLabel.textContent = minute;
   secondsLabel.textContent = second;
-  title.textContent = hour + ":" + minute + ":" + second;
+  title.textContent = `${hour}:${minute}:${second}`;
 }
 
 function checkTimeType() {
@@ -104,13 +112,13 @@ function checkTimeType() {
     if (hour > 11) {
       hour -= 12;
       if (hour < 10) {
-        hour = "0" + hour.toString();
+        hour = "0" + hour;
       }
       if (minute < 10) {
-        minute = "0" + minute.toString();
+        minute = "0" + minute;
       }
       if (second < 10) {
-        second = "0" + second.toString();
+        second = "0" + second;
       }
       pm.classList.toggle("invisible", timeTypeBool);
     } else {
